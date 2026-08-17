@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>INSERT COIN — Máquina de pistas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="crt">
+  <header>
+    <div class="titulo">INSERT COIN</div>
+    <div class="sub">MÁQUINA DE PISTAS · EDICIÓN 1987</div>
+  </header>
+
+  <section id="estado">
+    <div class="caja-estado">
+      <span class="etiqueta">CRÉDITOS</span>
+      <span id="creditos" class="valor">10</span>
+      <span class="etiqueta">NIVELES</span>
+      <span id="niveles" class="valor">0/8</span>
+    </div>
+  </section>
+
+  <section id="validador">
+    <h2>VALIDAR CÓDIGO</h2>
+    <p class="ayuda">Palabra clave, código de sección o código de bonus.</p>
+    <div class="fila">
+      <input id="entrada" type="text" placeholder="ESCRIBE TU CÓDIGO" autocomplete="off" spellcheck="false">
+      <button id="btn-validar">ENTER</button>
+    </div>
+    <div id="feedback" class="feedback"></div>
+  </section>
+
+  <section id="mapa">
+    <h2>MAPA DEL ARCADE</h2>
+    <div id="niveles-lista" class="niveles"></div>
+  </section>
+
+  <section id="pistas">
+    <h2>PISTAS</h2>
+    <p class="ayuda">Pista 1: 2 créditos · Pista 2: 3 créditos · Solución: 5 créditos</p>
+    <div class="fila">
+      <select id="nivel-pista"></select>
+      <button id="btn-p1">PISTA 1 (2)</button>
+      <button id="btn-p2">PISTA 2 (3)</button>
+      <button id="btn-sol">SOLUCIÓN (5)</button>
+    </div>
+    <div id="pista-feedback" class="feedback"></div>
+  </section>
+
+  <section id="final" class="oculto">
+    <h2>LA ÚLTIMA PALABRA</h2>
+    <p class="clave-final">ESCAPATE</p>
+    <p>La máquina no te quería atrapado. Te estaba probando — y has aprobado.</p>
+    <p>Elige tu salida: teclea <b>PUERTA</b> (Final A) o <b>CABLE</b> (Final B) en el validador.</p>
+  </section>
+
+  <footer>
+    <p>Honor system: nadie vigila. La web solo lleva tu registro.</p>
+    <p id="version"></p>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
