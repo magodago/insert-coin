@@ -1,0 +1,87 @@
+/* INSERT COIN — Máquina de pistas · estilo CRT arcade 1987 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #05050a;
+  font-family: "Courier New", Courier, monospace;
+  color: #00ff41;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.crt {
+  width: 100%;
+  max-width: 560px;
+  padding: 20px 16px 40px;
+  background: #0a0a14;
+  box-shadow: 0 0 40px rgba(0, 255, 65, 0.08);
+  border-left: 1px solid #00ff4122;
+  border-right: 1px solid #00ff4122;
+}
+
+header { text-align: center; padding: 18px 0 22px; border-bottom: 2px solid #00ff41; margin-bottom: 16px; }
+.titulo { font-size: 34px; letter-spacing: 8px; font-weight: bold; text-shadow: 0 0 12px #00ff41; }
+.sub { font-size: 12px; letter-spacing: 3px; color: #00ff4199; margin-top: 6px; }
+
+section { margin-bottom: 24px; }
+h2 { font-size: 14px; letter-spacing: 3px; color: #00ff41; border-bottom: 1px dashed #00ff4155; padding-bottom: 6px; margin-bottom: 10px; }
+.ayuda { font-size: 12px; color: #00ff4199; margin-bottom: 10px; }
+
+.caja-estado { display: flex; gap: 14px; align-items: center; justify-content: center; padding: 10px; border: 1px solid #00ff4155; background: #0d0d1a; }
+.etiqueta { font-size: 11px; letter-spacing: 2px; color: #00ff4199; }
+.valor { font-size: 26px; font-weight: bold; text-shadow: 0 0 10px #00ff41; }
+
+.fila { display: flex; gap: 8px; margin-bottom: 10px; }
+input, select {
+  flex: 1;
+  background: #05050a;
+  border: 1px solid #00ff4155;
+  color: #00ff41;
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: 2px;
+  padding: 10px 12px;
+  text-transform: uppercase;
+}
+input:focus, select:focus { outline: none; border-color: #00ff41; box-shadow: 0 0 8px #00ff4122; }
+
+button {
+  background: #00ff41;
+  color: #05050a;
+  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+button:hover { background: #33ff66; }
+button:disabled { background: #0d3a1a; color: #0a5a1a; cursor: not-allowed; }
+
+.feedback {
+  border: 1px solid #00ff4155;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 20px;
+  white-space: pre-wrap;
+}
+.feedback.ok { border-color: #00ff41; background: #00ff4108; }
+.feedback.err { border-color: #ff3355; background: #ff335508; color: #ff5566; }
+
+.niveles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.nivel { border: 1px solid #00ff4133; padding: 10px 4px; text-align: center; font-size: 12px; letter-spacing: 1px; color: #00ff4155; }
+.nivel.activo { border-color: #00ff41; color: #00ff41; text-shadow: 0 0 8px #00ff41; }
+.nivel.resuelto { border-color: #00ff41; background: #00ff4111; color: #00ff41; }
+.nivel .n { font-size: 18px; font-weight: bold; display: block; }
+.nivel .t { font-size: 9px; letter-spacing: 1px; }
+
+#pistas .fila { flex-wrap: wrap; }
+#pistas select { min-width: 130px; }
+
+.clave-final { font-size: 30px; letter-spacing: 6px; text-align: center; text-shadow: 0 0 14px #00ff41; margin: 12px 0; }
+
+.oculto { display: none; }
+footer { border-top: 1px solid #00ff4122; padding-top: 12px; text-align: center; font-size: 11px; color: #00ff4166; }
