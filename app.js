@@ -137,13 +137,19 @@
       }
     }
 
-    // 2) código de sección
+    // 2) código de sección (puede ser también código de bonus: FUSIBLES)
     if (SECCIONES[codigo]) {
       var ya = estado.secciones[codigo];
       estado.secciones[codigo] = true;
+      var msj = SECCIONES[codigo] + (ya ? '\n(ya la habías registrado)' : '');
+      if (BONUS[codigo] && !estado.bonus[codigo]) {
+        estado.bonus[codigo] = true;
+        estado.creditos += 1;
+        msj += '\n' + BONUS[codigo];
+      }
       guardar();
       render();
-      mostrar(fb, SECCIONES[codigo] + (ya ? '\n(ya la habías registrado)' : ''), 'ok');
+      mostrar(fb, msj, 'ok');
       return;
     }
 
